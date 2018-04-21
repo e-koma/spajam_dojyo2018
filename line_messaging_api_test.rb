@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'line/bot'
 require 'dotenv/load'
+require 'aws-sdk'
 
 def client
   @client ||= Line::Bot::Client.new { |config|
