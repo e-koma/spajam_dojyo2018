@@ -81,9 +81,12 @@ end
 private
 
 def put_s3(place, meal)
+  now = Time.now
+  time_format = now.strftime("%Y/%m/%d-%H:%M:%S.#{now.usec}")
+
   parameter = {
       bucket: 'spajamdojyo',
-      key: "2018/04/21/10/#{Time.now}-message",
+      key: "#{time_format}-message",
       body: { "place": "#{place}", "meal": "#{meal}" }.to_json,
   }
   s3.put_object(parameter)
