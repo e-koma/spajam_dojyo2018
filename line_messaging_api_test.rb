@@ -82,7 +82,7 @@ private
 
 def put_s3(place, meal)
   now = Time.now
-  time_format = now.strftime("%Y/%m/%d-%H:%M:%S.#{now.usec}")
+  time_format = now.strftime("%Y/%m/%d/%H:%M:%S.#{now.usec}")
 
   parameter = {
       bucket: 'spajamdojyo',
