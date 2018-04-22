@@ -2,6 +2,8 @@ require 'sinatra'
 require 'line/bot'
 require 'dotenv/load'
 require 'aws-sdk'
+require 'active_support'
+require 'active_support/core_ext'
 
 def client
   @client ||= Line::Bot::Client.new { |config|
@@ -81,7 +83,7 @@ end
 private
 
 def put_s3(place, meal)
-  now = Time.now
+  now = Time.current
   time_format = now.strftime("%Y/%m/%d/%H:%M:%S.#{now.usec}")
 
   parameter = {
