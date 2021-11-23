@@ -707,7 +707,7 @@ GEM
     line-bot-api (1.4.1)
     minitest (5.14.4)
     mustermann (1.0.3)
-    rack (2.0.6)
+    rack (2.2.3)
     rack-protection (2.0.5)
       rack
     sinatra (2.0.5)
